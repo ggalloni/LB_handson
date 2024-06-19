@@ -41,3 +41,13 @@ Then, of course, there are the notebooks:
                                 likelihood approximations.
 - `comparing_approximations.ipynb`: this notebook will plot the results for all the
                                     approximations in order to compare them.
+
+## Preliminary steps
+
+Before running the notebooks, you need to install the xQML code. To do so, you need to
+extract the `xQML-master.zip` file. Then, going inside the unzipped folder, you
+need to run
+
+```bash
+pip install -e .
+```

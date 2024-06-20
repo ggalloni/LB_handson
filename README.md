@@ -44,8 +44,8 @@ Then, of course, there are the notebooks:
 
 ## Preliminary steps
 
-Before running the notebooks, you need to install the xQML code. To do so, you need to
-extract the `xQML-master.zip` file. Then, going inside the unzipped folder, you
+Before running the notebooks, you need to install the xQML code (see [here](https://gitlab.in2p3.fr/xQML/xQML)). To do so, you need to
+extract the `xQML-master.zip`, cloned from the GitLab repo. Then, after going inside the unzipped folder, you
 need to run
 
 ```bash

@@ -18,7 +18,6 @@ def compute_theoretical_spectrum(lmax, r):
     pars.set_cosmology(H0=67.32, ombh2=0.02237, omch2=0.1201, mnu=0.06, omk=0, tau=0.06)
     pars.InitPower.set_params(As=2.12e-9, ns=0.9651, r=r)
     pars.set_for_lmax(lmax=2500)
-    # NOTE: these parameters are the one used in the templates
 
     pars.WantTensors = True
     pars.DoLensing = True

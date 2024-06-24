@@ -17,14 +17,12 @@ def get_fiducial_gaussian_chi2(
     return np.diag((data - (template + noise)[None, :]) @ inv_cov @ (data - (template + noise)[None, :]).T)
 
 
-def get_ideal_ptep_chi2(data, template, noise, fsky, ell, dl=None):
+def get_ideal_ptep_chi2(data, template, noise, fsky, ell):
     M = (data) / (template + noise)[None, :]
 
     X = M - np.log(M) - 1
     np.nan_to_num(X, copy=False, nan=0, posinf=0, neginf=0)
 
-    if dl is not None:
-        return np.sum((2 * ell[None, :] + 1) * fsky * X * dl)
     return np.sum((2 * ell[None, :] + 1) * fsky * X, axis=1)
 
 

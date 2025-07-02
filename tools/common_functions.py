@@ -2,15 +2,17 @@ import camb
 import numpy as np
 
 
-def compute_offsets(ell, varcl, clref, fsky=1.0, iter=1):
-    Nl = np.sqrt(np.abs(varcl - (2.0 / (2.0 * ell + 1) * clref**2) / fsky))
-    for _ in range(iter):
-        Nl = np.sqrt(
-            np.abs(
-                varcl - 2.0 / (2.0 * ell + 1) / fsky * (clref**2 + 2.0 * Nl * clref)
-            )
-        )
-    return Nl * np.sqrt((2.0 * ell + 1) / 2.0)
+def compute_offsets(ell, spectra):
+    Nl = []
+    for i in range(len(ell)):
+        spec = spectra[:, i]
+        negative_spectra = np.abs(spec[spec < 0])
+        try:
+            quantile = np.quantile(negative_spectra, 0.99)
+        except IndexError:
+            quantile = 0.0
+        Nl.append(quantile)
+    return np.array(Nl)
 
 
 def compute_theoretical_spectrum(lmax, r):

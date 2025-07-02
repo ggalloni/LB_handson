@@ -9,7 +9,7 @@ approximations affect the constraints on the tensor-to-scalar ratio.
 To clone this repo, run
 
 ```bash
-git clone https://github.com/ggalloni/LB_handson_2024.git
+git clone https://github.com/ggalloni/LB_handson.git
 ```
 
 To create a conda environment (named lb_like_env) with the required packages, run
@@ -37,6 +37,8 @@ Then, of course, there are the notebooks:
 
 - `setting_up_the_analysis.ipynb`: this notebook will generate the simulations and
                                     compute the angular power spectra.
+- `setting_up_the_analysis_with_systematic.ipynb`: this notebook will generate the simulations and
+                                    compute the angular power spectra in presence of a systematic signal.
 - `compute_the_chi2s.ipynb`: this notebook will compute the $\chi^2$ for the different
                                 likelihood approximations.
 - `comparing_approximations.ipynb`: this notebook will plot the results for all the
